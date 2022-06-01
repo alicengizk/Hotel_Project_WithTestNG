@@ -48,6 +48,11 @@ public class CHPage {
     @FindBy (id = "btnSubmit")
     public WebElement kullaniciGiris;
 
+    @FindBy (xpath = "//span[@class='btn btn-primary py-3 px-5']")
+    public WebElement createAccount;
+
+
+
 
 
 

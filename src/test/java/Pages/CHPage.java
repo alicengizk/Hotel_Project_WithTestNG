@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.Set;
+
 public class CHPage {
 
     public CHPage() {
@@ -50,6 +52,30 @@ public class CHPage {
 
     @FindBy (xpath = "//span[@class='btn btn-primary py-3 px-5']")
     public WebElement createAccount;
+
+    @FindBy (id = "menuHotels")
+    public WebElement hotelManage;
+
+    @FindBy (xpath = "//a[@href='/admin/HotelAdmin']")
+    public WebElement hotelList;
+
+    @FindBy (xpath = "//span[@class='hidden-480']")
+    public WebElement addHotel;
+
+    @FindBy (id = "Code")
+    public WebElement hotelCode;
+
+    @FindBy (id = "btnSubmit")
+    public WebElement saveButon;
+
+    @FindBy (xpath = "//select[@id='IDGroup']//option[@value='1']")
+    public WebElement hotelType;
+
+
+
+
+
+
 
 
 

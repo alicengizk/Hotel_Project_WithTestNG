@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.Set;
@@ -41,46 +42,51 @@ public class CHPage {
         Driver.getDriver().findElement(By.id("proceed-link")).click();
     }
 
+    public void kullaniciGiris() {
+        Driver.getDriver().get("https://qa-environment.concorthotel.com");
+        Driver.getDriver().findElement(By.id("details-button")).click();
+        Driver.getDriver().findElement(By.id("proceed-link")).click();
+        logInButon.click();
+        userName.sendKeys(ConfigReader.getProperty("chAdminUser"));
+        password.sendKeys(ConfigReader.getProperty("chAdminPassword"));
+        kullaniciGiris.click();
+    }
+
     @FindBy(id = "UserName")
     public WebElement userName;
 
     @FindBy(id = "Password")
     public WebElement password;
 
-    @FindBy (id = "btnSubmit")
+    @FindBy(id = "btnSubmit")
     public WebElement kullaniciGiris;
 
-    @FindBy (xpath = "//span[@class='btn btn-primary py-3 px-5']")
+    @FindBy(xpath = "//span[@class='btn btn-primary py-3 px-5']")
     public WebElement createAccount;
 
-    @FindBy (id = "menuHotels")
+    @FindBy(id = "menuHotels")
     public WebElement hotelManage;
 
-    @FindBy (xpath = "//a[@href='/admin/HotelAdmin']")
+    @FindBy(xpath = "//a[@href='/admin/HotelAdmin']")
     public WebElement hotelList;
 
-    @FindBy (xpath = "//span[@class='hidden-480']")
+    @FindBy(xpath = "//span[@class='hidden-480']")
     public WebElement addHotel;
 
-    @FindBy (id = "Code")
+    @FindBy(id = "Code")
     public WebElement hotelCode;
 
-    @FindBy (id = "btnSubmit")
+    @FindBy(id = "btnSubmit")
     public WebElement saveButon;
 
-    @FindBy (xpath = "//select[@id='IDGroup']//option[@value='1']")
+    @FindBy(xpath = "//select[@id='IDGroup']//option[@value='1']")
     public WebElement hotelType;
 
+    @FindBy(xpath = "//a[@href='/admin/HotelRoomAdmin']")
+    public WebElement hotelRooms;
 
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//i[@class='fa fa-search'])[2]")
+    public WebElement roomDetail;
 
 
 }

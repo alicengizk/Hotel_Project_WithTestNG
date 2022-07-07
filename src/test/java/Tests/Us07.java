@@ -3,16 +3,11 @@ package Tests;
 import Pages.CHPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
-import javax.swing.*;
-import java.security.Key;
 
 public class Us07 {
     CHPage chPage = new CHPage();
@@ -20,7 +15,7 @@ public class Us07 {
 
     @Test
     public void test01() {
-        chPage.kullaniciGiris();
+        chPage.adminGiris();
         chPage.hotelManage.click();
         chPage.hotelRooms.click();
         String expectedResult = "LIST OF HOTELROOMS";

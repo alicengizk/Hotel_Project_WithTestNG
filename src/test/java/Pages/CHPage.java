@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.util.Set;
-
 public class CHPage {
 
     public CHPage() {
@@ -42,7 +40,7 @@ public class CHPage {
         Driver.getDriver().findElement(By.id("proceed-link")).click();
     }
 
-    public void kullaniciGiris() {
+    public void adminGiris() {
         Driver.getDriver().get("https://qa-environment.concorthotel.com");
         Driver.getDriver().findElement(By.id("details-button")).click();
         Driver.getDriver().findElement(By.id("proceed-link")).click();
@@ -87,6 +85,12 @@ public class CHPage {
 
     @FindBy(xpath = "(//i[@class='fa fa-search'])[2]")
     public WebElement roomDetail;
+
+    @FindBy (xpath = "//a[@href='/admin/RoomReservationAdmin']")
+    public WebElement roomReservations;
+
+    @FindBy (xpath = "//span[@class='hidden-480']")
+    public WebElement addReservation;
 
 
 }

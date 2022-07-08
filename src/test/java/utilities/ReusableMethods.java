@@ -147,7 +147,17 @@ public class ReusableMethods {
         Select select=new Select(ddm);
         select.selectByIndex(selectIndex);
     }
+    public static void dropDownMenuXpathValue(String byxpath,String writeText ){
+        WebElement ddm=Driver.getDriver().findElement(By.xpath(byxpath));
+        Select select=new Select(ddm);
+        select.selectByValue(writeText);
+    }
 
+    public static void dropDownMenuIdValue(String byId,String writeText){
+        WebElement ddm=Driver.getDriver().findElement(By.id(byId));
+        Select select=new Select(ddm);
+        select.selectByValue(writeText);
+    }
 
 
 
